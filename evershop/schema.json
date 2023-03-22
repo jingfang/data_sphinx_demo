@@ -1,0 +1,324 @@
+{
+    "migration": {
+        "migration_id": {
+            "type": "int unsigned",
+            "PK": "True",
+            "FK": "False",
+            "required": "True"
+        },
+        "module": {
+            "type": "char(255)",
+            "PK": "False",
+            "FK": "False",
+            "required": "True"
+        },
+        "version": {
+            "type": "char(255)",
+            "PK": "False",
+            "FK": "False",
+            "required": "True"
+        },
+        "status": {
+            "type": "char(255)",
+            "PK": "False",
+            "FK": "False",
+            "required": "True"
+        },
+        "created_at": {
+            "type": "timestamp",
+            "PK": "False",
+            "FK": "False",
+            "required": "True"
+        },
+        "updated_at": {
+            "type": "timestamp",
+            "PK": "False",
+            "FK": "False",
+            "required": "True"
+        }
+    },
+    "order_activity": {
+        "order_activity_id": {
+            "type": "int unsigned",
+            "PK": "True",
+            "FK": "False",
+            "required": "True"
+        },
+        "uuid": {
+            "type": "varchar(36)",
+            "PK": "False",
+            "FK": "False",
+            "required": "True"
+        },
+        "order_activity_order_id": {
+            "type": "int unsigned",
+            "PK": "False",
+            "FK": "True",
+            "required": "True"
+        },
+        "comment": {
+            "type": "text",
+            "PK": "False",
+            "FK": "False",
+            "required": "True"
+        },
+        "customer_notified": {
+            "type": "smallint unsigned",
+            "PK": "False",
+            "FK": "False",
+            "required": "True"
+        },
+        "created_at": {
+            "type": "timestamp",
+            "PK": "False",
+            "FK": "False",
+            "required": "True"
+        },
+        "updated_at": {
+            "type": "timestamp",
+            "PK": "False",
+            "FK": "False",
+            "required": "True"
+        }
+    },
+    "payment_transaction": {
+        "payment_transaction_id": {
+            "type": "int unsigned",
+            "PK": "True",
+            "FK": "False",
+            "required": "True"
+        },
+        "uuid": {
+            "type": "varchar(36)",
+            "PK": "False",
+            "FK": "False",
+            "required": "True"
+        },
+        "payment_transaction_order_id": {
+            "type": "int unsigned",
+            "PK": "False",
+            "FK": "True",
+            "required": "True"
+        },
+        "transaction_id": {
+            "type": "varchar(100)",
+            "PK": "False",
+            "FK": "False",
+            "required": "False"
+        },
+        "transaction_type": {
+            "type": "char(255)",
+            "PK": "False",
+            "FK": "False",
+            "required": "True"
+        },
+        "amount": {
+            "type": "decimal(12,4)",
+            "PK": "False",
+            "FK": "False",
+            "required": "True"
+        },
+        "parent_transaction_id": {
+            "type": "varchar(100)",
+            "PK": "False",
+            "FK": "False",
+            "required": "False"
+        },
+        "payment_action": {
+            "type": "varchar(15)",
+            "PK": "False",
+            "FK": "False",
+            "required": "False"
+        },
+        "additional_information": {
+            "type": "text",
+            "PK": "False",
+            "FK": "False",
+            "required": "False"
+        },
+        "created_at": {
+            "type": "timestamp",
+            "PK": "False",
+            "FK": "False",
+            "required": "True"
+        }
+    },
+    "shipment": {
+        "shipment_id": {
+            "type": "int unsigned",
+            "PK": "True",
+            "FK": "False",
+            "required": "True"
+        },
+        "uuid": {
+            "type": "varchar(36)",
+            "PK": "False",
+            "FK": "False",
+            "required": "True"
+        },
+        "shipment_order_id": {
+            "type": "int unsigned",
+            "PK": "False",
+            "FK": "True",
+            "required": "True"
+        },
+        "carrier_name": {
+            "type": "varchar(255)",
+            "PK": "False",
+            "FK": "False",
+            "required": "False"
+        },
+        "tracking_number": {
+            "type": "varchar(255)",
+            "PK": "False",
+            "FK": "False",
+            "required": "False"
+        },
+        "created_at": {
+            "type": "timestamp",
+            "PK": "False",
+            "FK": "False",
+            "required": "True"
+        },
+        "updated_at": {
+            "type": "timestamp",
+            "PK": "False",
+            "FK": "False",
+            "required": "True"
+        }
+    },
+    "order_item": {
+        "order_item_id": {
+            "type": "int unsigned",
+            "PK": "True",
+            "FK": "False",
+            "required": "True"
+        },
+        "uuid": {
+            "type": "varchar(36)",
+            "PK": "False",
+            "FK": "False",
+            "required": "True"
+        },
+        "order_item_order_id": {
+            "type": "int unsigned",
+            "PK": "False",
+            "FK": "True",
+            "required": "True"
+        },
+        "product_id": {
+            "type": "int unsigned",
+            "PK": "False",
+            "FK": "False",
+            "required": "True"
+        },
+        "referer": {
+            "type": "int unsigned",
+            "PK": "False",
+            "FK": "False",
+            "required": "False"
+        },
+        "product_sku": {
+            "type": "varchar(255)",
+            "PK": "False",
+            "FK": "False",
+            "required": "True"
+        },
+        "product_name": {
+            "type": "text",
+            "PK": "False",
+            "FK": "False",
+            "required": "True"
+        },
+        "thumbnail": {
+            "type": "varchar(255)",
+            "PK": "False",
+            "FK": "False",
+            "required": "False"
+        },
+        "product_weight": {
+            "type": "decimal(12,4)",
+            "PK": "False",
+            "FK": "False",
+            "required": "False"
+        },
+        "product_price": {
+            "type": "decimal(12,4)",
+            "PK": "False",
+            "FK": "False",
+            "required": "True"
+        },
+        "product_price_incl_tax": {
+            "type": "decimal(12,4)",
+            "PK": "False",
+            "FK": "False",
+            "required": "True"
+        },
+        "qty": {
+            "type": "int",
+            "PK": "False",
+            "FK": "False",
+            "required": "True"
+        },
+        "final_price": {
+            "type": "decimal(12,4)",
+            "PK": "False",
+            "FK": "False",
+            "required": "True"
+        },
+        "final_price_incl_tax": {
+            "type": "decimal(12,4)",
+            "PK": "False",
+            "FK": "False",
+            "required": "True"
+        },
+        "tax_percent": {
+            "type": "decimal(12,4)",
+            "PK": "False",
+            "FK": "False",
+            "required": "True"
+        },
+        "tax_amount": {
+            "type": "decimal(12,4)",
+            "PK": "False",
+            "FK": "False",
+            "required": "True"
+        },
+        "discount_amount": {
+            "type": "decimal(12,4)",
+            "PK": "False",
+            "FK": "False",
+            "required": "True"
+        },
+        "total": {
+            "type": "decimal(12,4)",
+            "PK": "False",
+            "FK": "False",
+            "required": "True"
+        },
+        "variant_group_id": {
+            "type": "int unsigned",
+            "PK": "False",
+            "FK": "False",
+            "required": "False"
+        },
+        "variant_options": {
+            "type": "text",
+            "PK": "False",
+            "FK": "False",
+            "required": "False"
+        },
+        "product_custom_options": {
+            "type": "text",
+            "PK": "False",
+            "FK": "False",
+            "required": "False"
+        },
+        "requested_data": {
+            "type": "text",
+            "PK": "False",
+            "FK": "False",
+            "required": "False"
+        }
+    }
+}
