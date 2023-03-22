@@ -1,0 +1,6 @@
+| path | summary | is relevant |
+| --- | --- | --- |
+| [packages/evershop/src/modules/checkout/api/bestsellers/loadData.js](https://github.com/evershopcommerce/evershop/blob/bc7ee43cdadfb8a00e896c8f753da75938507854/packages/evershop/src/modules/checkout/api/bestsellers/loadData.js) | このコードでは、テーブルorder_itemのカラムorder_item_idはwhere句で使用されています。具体的には、`where('order_item_id', 'IS NOT', null)`という条件で、order_item_idがnullでないレコードを抽出しています。 | True |
+| [packages/evershop/src/modules/checkout/migration/Version-1.0.0.js](https://github.com/evershopcommerce/evershop/blob/4f1f4947f95e03b9cf64486a42b1669d484cba61/packages/evershop/src/modules/checkout/migration/Version-1.0.0.js) | <br><br>order_itemテーブルのカラムorder_item_idは、主キーとして使用されています。また、外部キーとして、orderテーブルのorder_idと関連付けられています。これにより、注文アイテムが特定の注文に関連付けられ、注文アイテムを特定するために使用されます。 | True |
+| [packages/evershop/src/modules/checkout/graphql/types/BestSeller/BestSeller.resolvers.js](https://github.com/evershopcommerce/evershop/blob/bc7ee43cdadfb8a00e896c8f753da75938507854/packages/evershop/src/modules/checkout/graphql/types/BestSeller/BestSeller.resolvers.js) | このコードでは、テーブルorder_itemのカラムorder_item_idはwhere句で使用されています。具体的には、query.where('order_item_id', 'IS NOT', null)という形で、order_item_idがnullでないレコードを抽出するために使用されています。ただし、このクエリではorder_itemテーブルのorder_item_idカラムをselectしていないため、結果には含まれません。 | False |
+[Back to order_item](../tables/order_item.md)
